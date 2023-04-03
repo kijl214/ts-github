@@ -10,7 +10,12 @@ const welcomeAPI = async (ctx: RouterContext, next: any) => {
  };
  await next();
 }
-router.get('/', welcomeAPI);
+
+import {router as articles} from "./routes/articles";
+// Other code statements go here
+app.use(articles.routes());
+
+router.get('/api/v1', welcomeAPI);
 app.use(logger());
 app.use(json());
 app.use(router.routes());

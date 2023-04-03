@@ -20,6 +20,7 @@ var import_koa = __toModule(require("koa"));
 var import_koa_router = __toModule(require("koa-router"));
 var import_koa_logger = __toModule(require("koa-logger"));
 var import_koa_json = __toModule(require("koa-json"));
+var import_articles = __toModule(require("./routes/articles"));
 const app = new import_koa.default();
 const router = new import_koa_router.default();
 const welcomeAPI = async (ctx, next) => {
@@ -28,7 +29,8 @@ const welcomeAPI = async (ctx, next) => {
   };
   await next();
 };
-router.get("/", welcomeAPI);
+app.use(import_articles.router.routes());
+router.get("/api/v1", welcomeAPI);
 app.use((0, import_koa_logger.default)());
 app.use((0, import_koa_json.default)());
 app.use(router.routes());
