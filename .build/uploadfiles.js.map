@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../uploadfiles.ts"],
+  "sourcesContent": ["import { create, urlSource } from \"ipfs-http-client\";\n\n// This will create a IPFS client which would allow you to upload files to IPFS.\nconst ipfs = create({\n\thost: \"ipfs.infura.io\",\n\tport: 5001,\n\tprotocol: \"https\"\n})\n\n// Use uploadFile method to upload to IPFS with file url.\nexport default async function uploadFileFromURL(file: string) {\n\tconst fileAdded = await ipfs.add(urlSource(file));\n\treturn `https://ipfs.io/ipfs/${fileAdded.cid.toString()}`;\n}\n\n// Use uploadFromStorage to upload using local file.\nexport const uploadFromStorage = async (file: File) => {\n  const fileAdded = await ipfs.add(file);\n  return `https://ipfs.io/ipfs/${fileAdded.cid.toString()}`;\n}"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA,8BAAkC;AAGlC,MAAM,OAAO,oCAAO;AAAA,EACnB,MAAM;AAAA,EACN,MAAM;AAAA,EACN,UAAU;AAAA;AAIX,iCAAgD,MAAc;AAC7D,QAAM,YAAY,MAAM,KAAK,IAAI,uCAAU;AAC3C,SAAO,wBAAwB,UAAU,IAAI;AAAA;AAIvC,MAAM,oBAAoB,OAAO,SAAe;AACrD,QAAM,YAAY,MAAM,KAAK,IAAI;AACjC,SAAO,wBAAwB,UAAU,IAAI;AAAA;",
+  "names": []
+}

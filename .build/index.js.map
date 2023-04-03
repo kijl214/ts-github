@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../index.ts"],
+  "sourcesContent": ["import Koa from \"koa\";\nimport Router, {RouterContext} from \"koa-router\";\nimport logger from \"koa-logger\";\nimport json from \"koa-json\";\nconst app: Koa = new Koa();\nconst router: Router = new Router();\nconst welcomeAPI = async (ctx: RouterContext, next: any) => {\n ctx.body = {\n message: \"Welcome to the blog API!\"\n };\n await next();\n}\nrouter.get('/', welcomeAPI);\napp.use(logger());\napp.use(json());\napp.use(router.routes());\napp.listen(10888);"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA,iBAAgB;AAChB,wBAAoC;AACpC,wBAAmB;AACnB,sBAAiB;AACjB,MAAM,MAAW,IAAI;AACrB,MAAM,SAAiB,IAAI;AAC3B,MAAM,aAAa,OAAO,KAAoB,SAAc;AAC3D,MAAI,OAAO;AAAA,IACX,SAAS;AAAA;AAET,QAAM;AAAA;AAEP,OAAO,IAAI,KAAK;AAChB,IAAI,IAAI;AACR,IAAI,IAAI;AACR,IAAI,IAAI,OAAO;AACf,IAAI,OAAO;",
+  "names": []
+}

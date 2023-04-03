@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../dist/index.js"],
+  "sourcesContent": ["\"use strict\";\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar uploadfiles_1 = __importDefault(require(\"./uploadfiles\"));\nvar fileURL = \"https://devfolio.co/never-stop-building.svg\";\nconsole.log((0, uploadfiles_1.default)(fileURL));\n"],
+  "mappings": ";AACA,IAAI,kBAAmB,WAAQ,QAAK,mBAAoB,SAAU,KAAK;AACnE,SAAQ,OAAO,IAAI,aAAc,MAAM,EAAE,WAAW;AAAA;AAExD,OAAO,eAAe,SAAS,cAAc,EAAE,OAAO;AACtD,IAAI,gBAAgB,gBAAgB,QAAQ;AAC5C,IAAI,UAAU;AACd,QAAQ,IAAK,IAAG,cAAc,SAAS;",
+  "names": []
+}
